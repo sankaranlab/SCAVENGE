@@ -114,6 +114,7 @@ plot.igraph(mutualknn30_graph, vertex.size=0.8, vertex.label=NA, vertex.color=ad
 - Z score based visualization   
 **Scatter plot**
 ```{r, message = FALSE, warning = FALSE, cache = TRUE, fig2, fig.height = 3, fig.width = 5, fig.align = "center"}
+viridis = c("#440154FF", "#472D7BFF", "#3B528BFF", "#2C728EFF", "#21908CFF", "#27AD81FF", "#5DC863FF", "#AADC32FF", "#FDE725FF")
 p1 <- ggplot(data=mono_mat, aes(x, y, color=z_score)) + geom_point(size=1, na.rm = TRUE, alpha = 0.6) + 
 scale_color_gradientn(colors = viridis) + scale_alpha()+
     pretty_plot() + theme(legend.title = element_blank()) + xlab("UMAP 1") + ylab("UMAP 2")
@@ -149,7 +150,7 @@ pp2
 **About 2 mins**  
 please set @mycores >= 1 and @permutation_times >= 1,000 in the real setting
 ```{r, message = FALSE, warning = FALSE, cache = TRUE}
-mono_permu <- get_sigcell_simple(knn_sparse_mat=mutualknn30, seed_idx=mono_mat$seed_idx, topseed_npscore=mono_mat$np_score, permutation_times=200, true_cell_significance=0.05, rda_output=F, mycores=4, rw_gamma=0.05)
+mono_permu <- get_sigcell_simple(knn_sparse_mat=mutualknn30, seed_idx=mono_mat$seed_idx, topseed_npscore=mono_mat$np_score, permutation_times=1000, true_cell_significance=0.05, rda_output=F, mycores=8, rw_gamma=0.05)
 mono_mat2 <- data.frame(mono_mat, mono_permu)
 ```
 
