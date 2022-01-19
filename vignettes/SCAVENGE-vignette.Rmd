@@ -17,7 +17,6 @@ The standard processed input data including fine-mapped variants and single-cell
 ### Load required packages
 
 ```{r, message = FALSE, warning = FALSE}
-devtools::load_all()
 library(SCAVENGE)
 library(chromVAR)
 library(gchromVAR)
@@ -27,6 +26,8 @@ library(data.table)
 library(BiocParallel)
 library(BSgenome.Hsapiens.UCSC.hg19)
 library(dplyr)
+library(igraph)
+
 set.seed(9527)
 ```
 
