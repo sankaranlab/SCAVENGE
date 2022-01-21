@@ -79,7 +79,7 @@ mutualknn30 <- getmutualknn(lsi_mat, 30)
 
 ### Network propagation  
 ```{r, message = FALSE, warning = FALSE, cache = TRUE}
-np_score <- randomWalk_sparse(intM=mutualknn30, queryGenes=rownames(mutualknn30)[seed_idx], gamma=0.05)
+np_score <- randomWalk_sparse(intM=mutualknn30, rownames(mutualknn30)[seed_idx], gamma=0.05)
 ```
 **Trait relevant score (TRS) with scaled and normalized**  
 A few cells are singletons are removed from further analysis

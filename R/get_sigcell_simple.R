@@ -56,7 +56,7 @@ get_sigcell_simple <- function(knn_sparse_mat=mutualknn30,
         mapply(sample, ., seed_table_top$Freq) %>%
         unlist %>%
         sort
-      xx <- randomWalk_sparse(intM=knn_sparse_mat, queryGenes=rownames(knn_sparse_mat)[as.numeric(sampled_cellid)], gamma=rw_gamma)
+      xx <- randomWalk_sparse(intM=knn_sparse_mat, queryCells=rownames(knn_sparse_mat)[as.numeric(sampled_cellid)], gamma=rw_gamma)
       if (i %% 100 == 0) {message(i)}
       return(xx)
     }
