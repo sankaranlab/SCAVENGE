@@ -41,6 +41,7 @@ get_sigcell_simple <- function(knn_sparse_mat=mutualknn30,
   if(permutation_times<100){
     warning("Permutation times less than 100")
   }
+  stopifnot("true_cell_significance must be a numeric value between 0, 1" = (true_cell_significance>0 & true_cell_significance<1))
   message("Get started!")
   cell_mat <- data.frame(cell=1:nrow(knn_sparse_mat), degree=colSums(knn_sparse_mat))
   cell_table <- data.frame(table(cell_mat$degree))
@@ -71,8 +72,7 @@ get_sigcell_simple <- function(knn_sparse_mat=mutualknn30,
   message("cells passed 0.001 threshold: ", round(sum(rowSums(permutation_df_top) <= 0.001*permutation_times)*100/nrow(permutation_df_top), 2), "%")
   message("cells passed 0.01 threshold: ", round(sum(rowSums(permutation_df_top) <= 0.01*permutation_times)*100/nrow(permutation_df_top), 2), "%")
   message("cells passed 0.05 threshold: ", round(sum(rowSums(permutation_df_top) <= 0.05*permutation_times)*100/nrow(permutation_df_top), 2), "%")
-  true_cell_top_idx <- rowSums(permutation_df_top)>=(true_cell_significance*permutation_times)
-  message("what propertion of seed cells over all cells: ", round(sum(seed_idx)*100/nrow(permutation_df_top), 2), "%") # how many propertion of seed over all cells
+  true_cell_top_idx <- rowSums(permutation_df_top)>=((1-true_cell_significance)*permutation_times)
   message("your emprical P value threshold: ", true_cell_significance)
   message("what propertion of enriched cells over all cells: ", round((sum(true_cell_top_idx)*100)/nrow(permutation_df_top), 2), "%") # how many propertion true cell over all cells
   message("what propertion of seed cells that are enriched cells: ",  round(sum(true_cell_top_idx & seed_idx)*100/sum(seed_idx), 2), "%") # how many propertion of seed were true cells
