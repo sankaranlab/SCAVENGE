@@ -6,7 +6,7 @@
 \usage{
 randomWalk_sparse(
   intM,
-  queryGenes,
+  queryCells,
   gamma = 0.05,
   seedWeight = "NO",
   stationary_cutoff = 1e-05
@@ -15,7 +15,7 @@ randomWalk_sparse(
 \arguments{
 \item{intM}{a sparse matrix indicating the adjacent matrix (m x m, where m is the cell number) of cell-to-cell network (M-kNN graph)}
 
-\item{queryGenes}{a logical vector indicating seed cells (TRUE) and non-seed cells (FALSE) with length of m, where m is the cell number. The length and position are corresponding to intM}
+\item{queryCells}{a logical vector indicating seed cells (TRUE) and non-seed cells (FALSE) with length of m, where m is the cell number. The length and position are corresponding to intM}
 
 \item{gamma}{a numeric value indicating the probability of node restart at each step of random walk}
 
@@ -31,6 +31,6 @@ Calculate the network propagation score using a set of seed cells and cell-to-ce
 }
 \examples{
 \dontrun{
-randomWalk_sparse <- tfidf(intM, queryGenes, gamma=0.05, seedWeight="NO", stationary_cutoff=1e-5)}
+randomWalk_sparse <- tfidf(intM, queryCells, gamma=0.05, seedWeight="NO", stationary_cutoff=1e-5)}
 
 }
