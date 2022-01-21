@@ -68,11 +68,11 @@ get_sigcell_simple <- function(knn_sparse_mat=mutualknn30,
   # permutation_score_top <- do.call(cbind.data.frame, permutation_score_top)
   permutation_df_top <- data.frame(matrix(nrow=nrow(knn_sparse_mat), ncol=permutation_times))
 
-  permutation_df_top <- apply(permutation_score_top, 2, function(x) { temp <- x<=topseed_npscore; return(temp) } )
+  permutation_df_top <- apply(permutation_score_top, 2, function(x) { temp <- x > topseed_npscore; return(temp) } )
   message("cells passed 0.001 threshold: ", round(sum(rowSums(permutation_df_top) <= 0.001*permutation_times)*100/nrow(permutation_df_top), 2), "%")
   message("cells passed 0.01 threshold: ", round(sum(rowSums(permutation_df_top) <= 0.01*permutation_times)*100/nrow(permutation_df_top), 2), "%")
   message("cells passed 0.05 threshold: ", round(sum(rowSums(permutation_df_top) <= 0.05*permutation_times)*100/nrow(permutation_df_top), 2), "%")
-  true_cell_top_idx <- rowSums(permutation_df_top)>=((1-true_cell_significance)*permutation_times)
+  true_cell_top_idx <- rowSums(permutation_df_top) <= true_cell_significance*permutation_times
   message("your emprical P value threshold: ", true_cell_significance)
   message("what propertion of enriched cells over all cells: ", round((sum(true_cell_top_idx)*100)/nrow(permutation_df_top), 2), "%") # how many propertion true cell over all cells
   message("what propertion of seed cells that are enriched cells: ",  round(sum(true_cell_top_idx & seed_idx)*100/sum(seed_idx), 2), "%") # how many propertion of seed were true cells
