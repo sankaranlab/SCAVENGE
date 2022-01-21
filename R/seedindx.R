@@ -19,14 +19,14 @@ seedindex <- function(z_score, percent_cut=0.05){
   }
   z2pvalue <- pnorm(z_score, lower.tail = FALSE)
   message("Cells with enriched P < 0.05: ", sum(z2pvalue<=0.05))
-  s_percent <- floor(sum(z2pvalue<=0.05)*100/length(z2pvalue))
+  s_percent <- round(sum(z2pvalue<=0.05)*100/length(z2pvalue), 2)
   message("Percent: ", s_percent, "%")
   if(s_percent>(100*percent_cut)){
     message("The top ", (100*percent_cut), "% of cells ", "(N=", floor(percent_cut*length(z2pvalue)), ") were selected as seed cells")
     seed_idx <- rank(-z_score) <= floor(percent_cut*length(z2pvalue))
   } else {
     message("These cells were selected as seed cells")
-    seed_idx <- sum(z2pvalue<=0.05)
+    seed_idx <- z2pvalue<=0.05
   }
   return(seed_idx)
 }
