@@ -2,7 +2,7 @@
 
 ### Overview:
 
-Co-localization approaches using genetic variants and single-cell epigenomic data are unfortunately uninformative for many cells given the extensive sparsity across single-cell profiles. Therefore, only a few cells from the truly relevant population demonstrate reliable phenotypic relevance. Wile the global high-dimensional features of individual single cells are sufficient to represent the underlying cell identities or states, which enables the relationships among such cells to be readily inferred. By taking advantage of these attributes, SCAVENGE identifies the most phenotypically-enriched cells by co-localization and explores the transitive associations across the cell-to-cell network to assign each cell a probability representing the cell’s relevance to those phenotype-enriched cells via network propagation.
+Co-localization approaches using genetic variants and single-cell epigenomic data are unfortunately uninformative for many cells given the extensive sparsity across single-cell profiles. Therefore, only a few cells from the truly relevant population demonstrate reliable phenotypic relevance. The global high-dimensional features of individual single cells are sufficient to represent the underlying cell identities or states, which enables the relationships among such cells to be readily inferred. By taking advantage of these attributes, SCAVENGE identifies the most phenotypically-enriched cells by co-localization and explores the transitive associations across the cell-to-cell network to assign each cell a probability representing the cell’s relevance to those phenotype-enriched cells via network propagation.
 
 We developed a novel enrichment method (**SCAVENGE**) (Single Cell Analysis of Variant Enrichment through Network propagation of GEnomic data) that can discriminate between closely related cell types/states and score single cells for GWAS enrichment. 
 
@@ -13,8 +13,8 @@ We developed a novel enrichment method (**SCAVENGE**) (Single Cell Analysis of V
 
 
 
-We've implemented **SCAVENGE** as an `R` package for computing single-cell based GWAS enrichments from fine-mapped posterior probabilities and quantitative epigenomic data (i.e. scATAC-seq and potentially other single-cell epigenome profiling).  
-As single-cell genomic datasets grow in volume, we expect SCAVENGE holds great promise for efficiently uncovering relevant cell populations for more phenotypes or functions in different scenarios, which may expand beyond the complex trait genetic variants we have examined here. Welcome to use **SCAVENGE** to discover more phenotype relevant cells!
+We've implemented **SCAVENGE** as an `R` package for computing single-cell based GWAS enrichments from fine-mapped posterior probabilities and quantitative epigenomic data (i.e. scATAC-seq and potentially other single-cell epigenome profiling methods).  
+As single-cell genomic datasets grow in volume, we expect SCAVENGE will have great promise for efficiently uncovering relevant cell populations for more phenotypes or functions in different scenarios, which may expand beyond the complex trait genetic variants we have examined here. We welcome you to use SCAVENGE to discover more phenotype relevant cells!
 
 ### Installation:
 
