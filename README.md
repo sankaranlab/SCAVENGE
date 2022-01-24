@@ -25,7 +25,7 @@ directly from GitHub by typing the following into an `R` console:
 devtools::install_github("https://github.com/sankaranlab/SCAVENGE")
 ```
 ### Tutorial:
-This web resource and vignette compiliation shows how to reproduce results of SCAVENGE analysis with monocyte count on a 10X PBMC dataset [[Vignette-pdf]](doc/SCAVENGE-vignette.pdf), [[Vignette-R markdown code]](vignettes/SCAVENGE-vignette.Rmd). 
+This web resource and vignette compiliation shows how to reproduce results of SCAVENGE analysis with monocyte count on a 10X PBMC dataset [[Vignette-pdf]](doc/SCAVENGE-vignette.pdf), [[Vignette-R markdown code]](doc/SCAVENGE-vignette.Rmd). 
 
 
 ### Citation:
