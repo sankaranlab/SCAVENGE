@@ -72,6 +72,8 @@ tfidf_mat <- tfidf(bmat=peak_by_cell_mat, mat_binary=TRUE, TF=TRUE, log_TF=TRUE)
 ```{r, message = TRUE, warning = FALSE, cache = TRUE}
 lsi_mat <- do_lsi(tfidf_mat, dims=30)
 ```
+
+Please be sure that there is no potential batch effects for cell-to-cell graph construction. If the cells are from different samples or different conditions etc., please consider using Harmony analysis (`HarmonyMatrix` from [Harmony package](https://portals.broadinstitute.org/harmony/index.html)). Typically you could take the lsi_mat as the input with `parameter do_pca = FALSE` and provide meta data describing extra data such as sample and batch for each cell. Finally, a harmony-fixed LSI matrix can be used as input for the following analysis.  
 **Calculate m-knn graph**
 ```{r, message = FALSE, warning = FALSE, cache = TRUE}
 mutualknn30 <- getmutualknn(lsi_mat, 30)
@@ -82,7 +84,7 @@ mutualknn30 <- getmutualknn(lsi_mat, 30)
 np_score <- randomWalk_sparse(intM=mutualknn30, rownames(mutualknn30)[seed_idx], gamma=0.05)
 ```
 **Trait relevant score (TRS) with scaled and normalized**  
-A few cells are singletons are removed from further analysis
+A few cells are singletons are removed from further analysis, this will lead very few cells be removed for the following analysis. You can always recover those cells with a unified score of 0 and it will not impact the following analysis.
 ```{r, message = FALSE, warning = FALSE, cache = TRUE}
 omit_idx <- np_score==0
 sum(omit_idx)
