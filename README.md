@@ -29,7 +29,7 @@ This web resource and vignette compiliation shows how to reproduce results of SC
 
 
 ### Citation:
-If you used or adapted SCAVENGE in your study, please cite our paper [[bioRxiv]](https://www.biorxiv.org/content/10.1101/2022.01.23.477426v1)|[PubMed].   
+If you used or adapted SCAVENGE in your study, please cite our paper [[Nat Biotechnol]]([https://www.biorxiv.org/content/10.1101/2022.01.23.477426v1](https://www.nature.com/articles/s41587-022-01341-y)|[PubMed](https://pubmed.ncbi.nlm.nih.gov/35668323/).   
 *Variant to function mapping at single-cell resolution through network propagation.*
 
 
