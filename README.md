@@ -27,7 +27,7 @@ devtools::install_github("https://github.com/sankaranlab/SCAVENGE")
 ### Tutorial:
 This web resource and vignette compiliation shows how to reproduce results of SCAVENGE analysis with monocyte count on a 10X PBMC dataset [[Vignette-pdf]](doc/SCAVENGE-vignette.pdf), [[Vignette-R markdown code]](doc/SCAVENGE-vignette.Rmd). 
 
-See the [[Wiki]](https://github.com/sankaranlab/SCAVENGE/wiki) page for some infomration on preparing your GWAS data for SCAVENGE, including finemapping.
+See the [[Wiki]](https://github.com/sankaranlab/SCAVENGE/wiki) page for some information on preparing your GWAS data for SCAVENGE, including finemapping.
 
 ### Citation:
 If you used or adapted SCAVENGE in your study, please cite our paper [[*Nat Biotechnol*]](https://www.nature.com/articles/s41587-022-01341-y)  || [[*PubMed*]](https://pubmed.ncbi.nlm.nih.gov/35668323/).   
