@@ -36,5 +36,5 @@ If you used or adapted SCAVENGE in your study, please cite our paper [[*Nat Biot
 
 ### Contact:
 If you run into issues and would like to report them, you can use the "Issues" tab on the left hand side.  
-Alternatively, you can contact authors: fyu{at}broadinstitute.org or sankaran{at}broadinstitute.org.  
+Alternatively, you can contact authors: fyu{at}broadinstitute.org, lcato{at}broadinstitute.org and/or sankaran{at}broadinstitute.org.  
 
