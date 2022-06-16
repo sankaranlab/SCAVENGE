@@ -25,17 +25,17 @@ directly from GitHub by typing the following into an `R` console:
 devtools::install_github("https://github.com/sankaranlab/SCAVENGE")
 ```
 ### Tutorial:
-This web resource and vignette compiliation shows how to reproduce results of SCAVENGE analysis with monocyte count on a 10X PBMC dataset [[Vignette-pdf]](doc/SCAVENGE-vignette.pdf), [[Vignette-R markdown code]](doc/SCAVENGE-vignette.Rmd). 
+This web resource and vignette compiliation shows how to reproduce results of SCAVENGE analysis with monocyte count on a 10X PBMC dataset [[**Vignette-pdf**]](doc/SCAVENGE-vignette.pdf), [[**Vignette-R markdown code**]](doc/SCAVENGE-vignette.Rmd). 
 
-See the [[Wiki]](https://github.com/sankaranlab/SCAVENGE/wiki) page for some information on preparing your GWAS data for SCAVENGE, including finemapping.
+See the [[**Wiki page**]](https://github.com/sankaranlab/SCAVENGE/wiki)  for some information on preparing your GWAS data for SCAVENGE, including finemapping.
 
 ### FAQs:
 - *What input data are accepted for SCAVENGE analysis?*  
-A: The count matrix of scATAC-seq data and fine-mapped variants from GWAS summary statistics (we provided a tutorial for fine-mapping analysis from GWAS [**wiki page**](https://github.com/sankaranlab/SCAVENGE/wiki)). Theoretically, GWAS summary statistics can be used as input but we do not recommend it because LD can obscure causal cell type identification.
+A: The count matrix of scATAC-seq data and fine-mapped variants from GWAS summary statistics (we provided a tutorial for fine-mapping analysis from GWAS [[**Wiki page**]](https://github.com/sankaranlab/SCAVENGE/wiki)). Theoretically, GWAS summary statistics can be used as input but we do not recommend it because LD can obscure causal cell type identification.
 - *Can I use scRNA-seq instead of scATAC-seq?*  
 A: It is not feasible for SCAVENGE analysis from scRNA-seq currently. We are actively developing this tool to be scalable to scRNA-seq, please stay tuned. 
 - *How can I request new feature?*  
-A: We open `discussions` page, please feel free to discuss and post your ideas. 
+A: We open [[**Discussions**]](https://github.com/sankaranlab/SCAVENGE/discussions) page, please feel free to discuss and post your ideas. 
 
 
 ### Citation:
