@@ -27,7 +27,11 @@ devtools::install_github("https://github.com/sankaranlab/SCAVENGE")
 ### Tutorial:
 This web resource and vignette compiliation shows how to reproduce results of SCAVENGE analysis with monocyte count on a 10X PBMC dataset [[**Vignette-pdf**]](doc/SCAVENGE-vignette.pdf), [[**Vignette-R markdown code**]](doc/SCAVENGE-vignette.Rmd). 
 
-See the [[**Wiki page**]](https://github.com/sankaranlab/SCAVENGE/wiki)  for some information on preparing your GWAS data for SCAVENGE, including finemapping.
+See the [[**Wiki page**]](https://github.com/sankaranlab/SCAVENGE/wiki) for more information:
+- [SCAVENGE] Preparing your GWAS data for finemapping
+- [SCAVENGE] Preparing your scATAC-seq data
+- [SCAVENGE] Rule of thumb of SCAVENGE analysis and intepretation
+- [SCAVENGE-L] SCAVENGE-L method for single cell (mt)DNA mutation-based lineage tracing analysis
 
 ### FAQs:
 - *What input data are accepted for SCAVENGE analysis?*  
@@ -42,8 +46,10 @@ A: We open [[**Discussions**]](https://github.com/sankaranlab/SCAVENGE/discussio
 If you used or adapted SCAVENGE in your study, please cite our paper [[*Nat Biotechnol*]](https://www.nature.com/articles/s41587-022-01341-y)  || [[*PubMed*]](https://pubmed.ncbi.nlm.nih.gov/35668323/).   
 *Variant to function mapping at single-cell resolution through network propagation.*
 
+If you used or adapted SCAVENGE-L, please also cite our paper [[*placeholder*]](placeholder)
+
 
 ### Contact:
 If you run into issues and would like to report them, you can use the "Issues" tab on the left hand side.  
-Alternatively, you can contact authors: fyu{at}broadinstitute.org, lcato{at}broadinstitute.org and/or sankaran{at}broadinstitute.org.  
+Alternatively, you can contact authors: fyu{at}broadinstitute.org, lcato{at}broadinstitute.org, cweng@wi.mit.edu, and/or sankaran{at}broadinstitute.org.  
 
