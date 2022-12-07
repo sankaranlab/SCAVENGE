@@ -38,6 +38,7 @@ Suggests:
     rmarkdown,
     methods,
     BiocParallel,
+    BiocStyle,
     chromVAR, 
     GenomicRanges,
     S4Vectors,
