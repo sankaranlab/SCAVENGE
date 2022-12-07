@@ -7,17 +7,20 @@
 cal_scalefactor(z_score, percent_cut = 0.01)
 }
 \arguments{
-\item{z_score}{a numeric vector that is original Z scores for individual cells calculated from gchromVAR}
+\item{z_score}{a numeric vector that is original Z scores for
+individual cells calculated from gchromVAR.}
 
-\item{percent_cut}{a numeric number (0, 1) indicating what percentage of most enriched cells will be selected to calculate scale factor}
+\item{percent_cut}{a numeric number (0, 1) indicating what percentage of
+most enriched cells will be selected to calculate scale factor.}
 }
 \value{
 a numeric value
 }
 \description{
-used for generate a scale factor from bias-corrected Z score for TRS scale and normalization
+Used for generate a scale factor from bias-corrected Z score
+for TRS scale and normalization.
 }
 \examples{
-\dontrun{ cal_scalefactor <- seedindx(z_score_mat$z_score, 0.01)}
-
+z_score <- example_results$mono_mat$z_score
+sf <- cal_scalefactor(z_score = z_score)
 }

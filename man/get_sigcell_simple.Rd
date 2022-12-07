@@ -5,50 +5,60 @@
 \title{get_sigcell_simple}
 \usage{
 get_sigcell_simple(
-  knn_sparse_mat = mutualknn30,
-  seed_idx = seed_p0.05,
-  topseed_npscore = topseed_npscore,
+  knn_sparse_mat,
+  seed_idx,
+  topseed_npscore,
   permutation_times = 1000,
   true_cell_significance = 0.05,
-  rda_output = F,
-  out_rda = "true_cell_df.rda",
-  mycores = 4,
+  rda_output = FALSE,
+  out_rda = tempfile(fileext = "true_cell_df.rda"),
+  mycores = 1,
   rw_gamma = 0.05
 )
 }
 \arguments{
-\item{knn_sparse_mat}{a sparse matrix used for network propagation, which indicates the adjacent matrix (m x m, where m is the cell number) of cell-to-cell network (M-kNN graph)}
+\item{knn_sparse_mat}{a sparse matrix used for network propagation,
+which indicates the adjacent matrix (m x m, where m is the cell number)
+of cell-to-cell network (M-kNN graph)}
 
-\item{seed_idx}{a logical vector indicating seed cells (TRUE) and non-seed cells (FALSE) with length of m, where m is the cell number. The length and position are corresponding to knn_sparse_mat}
+\item{seed_idx}{a logical vector indicating seed cells (TRUE) and
+non-seed cells (FALSE) with length of m, where m is the cell number.
+The length and position are corresponding to knn_sparse_mat}
 
 \item{topseed_npscore}{a numeric vector of real network propagation score}
 
-\item{permutation_times}{an integer describe times of permutation test for each cell}
+\item{permutation_times}{an integer describe times of
+permutation test for each cell}
 
-\item{true_cell_significance}{a numeric value between 0-1 indicating the significant threshold used to determine statistically trait-enriched cell}
+\item{true_cell_significance}{a numeric value between 0-1 indicating the
+significant threshold used to determine statistically trait-enriched cell}
 
 \item{rda_output}{if output details of each permutation as a rda}
 
-\item{out_rda}{if rda_output=T, an rda will be outputed with path and name specified}
+\item{out_rda}{if rda_output=T, an rda will be outputed with
+path and name specified}
 
 \item{mycores}{how many cores used for permutation test}
 
-\item{rw_gamma}{gamma from randomWalk_sparse function. Keep the same with what you used in the real setting}
+\item{rw_gamma}{gamma from randomWalk_sparse function.
+Keep the same with what you used in the real setting}
 }
 \value{
-a dataframe with two columns, the first one is seed index (the same with input), the second one is significance from permutation test. In addition, an R data is generated, which contains this dataframe and another dataframe depicting the network propagation score for each cell at each permuation
+A dataframe with two columns, the first one is seed index
+(the same with input), the second one is significance
+from permutation test. In addition, an R data is generated,
+which contains this dataframe and another dataframe depicting
+the network propagation score for each cell at each permuation.
 }
 \description{
-a function to determine statistically trait-enriched cell by permutation test
+a function to determine statistically trait-enriched
+cell by permutation test.
 }
 \examples{
-\dontrun{
-get_sigcell_simple(knn_sparse_mat=mutualknn30,
-seed_idx=seed_p0.05,
-permutation_times=1000,
-true_cell_significance=0.05,
-rda_output=F,
-out_rda="true_cell_df.rda",
- mycores=4, rw_gamma=0.05)}
-
+knn_sparse_mat <- example_results$mutualknn30
+mono_mat <- example_results$mono_mat
+ture_cell_df <- get_sigcell_simple(knn_sparse_mat=knn_sparse_mat,
+                                   seed_idx=mono_mat$seed_idx,
+                                   topseed_npscore=mono_mat$np_score,
+                                   permutation_times=100)
 }

@@ -18,6 +18,10 @@ a sparse matrix of LSI
 Get a LSI matrix (cell-by-LSI) from TF-IDF matrix from single cell profiles
 }
 \examples{
-\dontrun{ lsi_mat <- do_lsi(tfidf_mat, dims=30)}
-
+SE_pbmc5k <- example_data(name="pbmc5k_SE.rda")
+peak_by_cell_mat <- SummarizedExperiment::assay(SE_pbmc5k)
+#### Downsample to speed up example ####
+peak_by_cell_mat <- peak_by_cell_mat[seq_len(500), seq_len(100)]
+tfidf_mat <- tfidf(bmat=peak_by_cell_mat)
+lsi_mat <- do_lsi(mat=tfidf_mat, dims=30)
 }

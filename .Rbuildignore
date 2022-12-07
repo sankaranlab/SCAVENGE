@@ -2,3 +2,8 @@
 ^\.Rproj\.user$
 ^doc$
 ^Meta$
+^\.github$
+README.Rmd
+image
+^LICENSE$
+vignettes/*_cache$

@@ -13,10 +13,10 @@ max_min_scale(x)
 a numeric vector
 }
 \description{
-a function for max-min normalization for network propagation score
+a function for max-min normalization for
+network propagation score.
 }
 \examples{
-\dontrun{
-trs <- max_min_scale(ceiling_np)}
-
+x <- rnorm(10)
+scale_vec <- max_min_scale(x = x)
 }

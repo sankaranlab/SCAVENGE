@@ -9,7 +9,8 @@ capOutlierQuantile(x, q_ceiling = 0.99)
 \arguments{
 \item{x}{a numeric vector}
 
-\item{q_ceiling}{a numeric value indicating which quantile is used for ceiling the vector}
+\item{q_ceiling}{a numeric value indicating which quantile is used
+for ceiling the vector.}
 }
 \value{
 numeric vector
@@ -18,6 +19,5 @@ numeric vector
 cap/normalize the trs with quantile
 }
 \examples{
-(x_ceiling <- capOutlierQuantile(x=1:10, q_ceiling=0.8))
-
+x_ceiling <- capOutlierQuantile(x=seq_len(10), q_ceiling=0.8)
 }

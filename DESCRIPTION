@@ -1,30 +1,35 @@
 Package: SCAVENGE
 Title: Identifying genetic trait/phenotype relevant cell type/state at single cell resolution
-Version: 1.0.1
+Version: 1.0.2
 Date: 2020-01-01
+URL: https://github.com/sankaranlab/SCAVENGE
 Authors@R: 
     person(given = "Fulong",
            family = "Yu",
            role = c("aut", "cre"),
            email = "fyu@broadinstitute.org",
            comment = c(ORCID = "0000-0002-6100-8300"))
-Maintainer: Fulong Yu <fyu@broadinstitute.org>
-Description: SCAVENGE (Single Cell Analysis of Variant Enrichment through Network propagation of GEnomic data) optimizes the inference of functional and genetic associations to specific cells at single-cell resolution.
+Description: SCAVENGE (Single Cell Analysis of Variant Enrichment through 
+  Network propagation of GEnomic data) optimizes the inference of functional 
+  and genetic associations to specific cells at single-cell resolution.
 License: GPL (>= 2)
 Encoding: UTF-8
-LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.2
 Depends:
-    R (>= 3.5.0)
+    R (>= 4.0.0)
 Imports:
+    stats,
     RANN,
-    dplyr,
     igraph,
     parallel,
     Matrix,
-    irlba
+    irlba,
+    SummarizedExperiment,
+    gchromVAR
 Suggests: 
+    utils,
+    dplyr,
     stringr,
     BSgenome.Hsapiens.UCSC.hg19,
     ggplot2,
@@ -33,13 +38,17 @@ Suggests:
     rmarkdown,
     methods,
     BiocParallel,
-    chromVAR,
-    gchromVAR,
-    SummarizedExperiment,
+    chromVAR, 
     GenomicRanges,
     S4Vectors,
     BuenColors,
-    rmarkdown
-biocViews: Variant, Function, CellBasedAssays, Network, 
-    Trajectory, CellType, Epigenetics, ATACSeq, SingleCell
+    rworkflows
+Remotes:
+  github::caleblareau/gchromVAR,
+  github::caleblareau/BuenColors,
+  github::neurogenomics/rworkflows
+biocViews: Variant, Function, CellBasedAssays,
+  Network, NetworkEnrichment,NetworkInference,
+  Trajectory, CellType, Epigenetics, ATACSeq, SingleCell, Normalization
 VignetteBuilder: knitr
+LazyData: true
