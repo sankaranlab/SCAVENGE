@@ -13,24 +13,34 @@ randomWalk_sparse(
 )
 }
 \arguments{
-\item{intM}{a sparse matrix indicating the adjacent matrix (m x m, where m is the cell number) of cell-to-cell network (M-kNN graph)}
+\item{intM}{a sparse matrix indicating the adjacent matrix
+(m x m, where m is the cell number) of cell-to-cell network (M-kNN graph).}
 
-\item{queryCells}{a logical vector indicating seed cells (TRUE) and non-seed cells (FALSE) with length of m, where m is the cell number. The length and position are corresponding to intM}
+\item{queryCells}{a logical vector indicating seed cells (TRUE)
+and non-seed cells (FALSE) with length of m, where m is the cell number.
+The length and position are corresponding to intM.}
 
-\item{gamma}{a numeric value indicating the probability of node restart at each step of random walk}
+\item{gamma}{a numeric value indicating the probability of node
+restart at each step of random walk.}
 
-\item{seedWeight}{a numeric vector indicating the weight assigned to each node. "NO" (by default) means considering weights are equal (no weight)}
+\item{seedWeight}{a numeric vector indicating the weight assigned
+to each node. "NO" (by default) means
+considering weights are equal (no weight).}
 
-\item{stationary_cutoff}{delta used for determine the stationary state between any two adjacent iterations}
+\item{stationary_cutoff}{Delta used for determine the stationary state
+between any two adjacent iterations.}
 }
 \value{
-a numeric vector of network propagation score with length of m, where m is the cell number
+a numeric vector of network propagation score with length of m,
+where m is the cell number.
 }
 \description{
-Calculate the network propagation score using a set of seed cells and cell-to-cell graph
+Calculate the network propagation score using a set of
+seed cells and cell-to-cell graph.
 }
 \examples{
-\dontrun{
-randomWalk_sparse <- tfidf(intM, queryCells, gamma=0.05, seedWeight="NO", stationary_cutoff=1e-5)}
-
+mutualknn30 <- example_results$mutualknn30
+seed_idx <- example_results$seed_idx
+np_score <- randomWalk_sparse(intM = mutualknn30,
+                              queryCells = rownames(mutualknn30)[seed_idx])
 }

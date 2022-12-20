@@ -7,17 +7,20 @@
 seedindex(z_score, percent_cut = 0.05)
 }
 \arguments{
-\item{z_score}{a numeric vector that is original Z scores for individual cells calculated from gchromVAR}
+\item{z_score}{a numeric vector that is original Z scores for individual
+cells calculated from gchromVAR.}
 
-\item{percent_cut}{a numeric number (0, 1) indicating what percentage of cells will be selected as seed cells if too many cells fit the P value<0.05 cutoff}
+\item{percent_cut}{a numeric number (0, 1) indicating what percentage
+of cells will be selected as seed cells if too many cells fit
+the P value<0.05 cutoff.}
 }
 \value{
-a logical vector indicating seed cells or not
+a logical vector indicating seed cells or not.
 }
 \description{
 used for generate seed cell index from bias-corrected Z score
 }
 \examples{
-\dontrun{ seed_idx <- seedindx(z_score_mat$z_score, 0.1)}
-
+z_score <- example_results$mono_mat$z_score
+seed_idx <- seedindex(z_score = z_score, percent_cut = 0.1)
 }

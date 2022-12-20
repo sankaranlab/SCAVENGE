@@ -1,25 +1,37 @@
 
 #' @title tfidf
 #'
-#' @description Get a normalized TFIDF matrix from peak-by-cell matrix from single cell profiles
+#' @description Get a normalized TFIDF matrix from peak-by-cell matrix
+#' from single cell profiles.
 #'
-#' @param bmat a sparse/dense matrix or dataframe indicating count matrix (peak-by-cell matrix)
-#' @param mat_binary a logic value to indicate if input bmat is spare matrix or not. bmat will be converted into a sparse matrix.
-#' @param TF a logic value to indicate if term frequency (TF) normalization is performed
-#' @param log_TF a logic value to indicate if natural logarithm values of the TF are calculated and used
-#' @param scale_factor a scale factor used to multiple the resulting TF-IDF matrix
+#' @param bmat a sparse/dense matrix or dataframe indicating count matrix
+#' (peak-by-cell matrix).
+#' @param mat_binary a logic value to indicate if input bmat is
+#' spare matrix or not. bmat will be converted into a sparse matrix.
+#' @param TF a logic value to indicate if term frequency (TF) normalization
+#' is performed.
+#' @param log_TF a logic value to indicate if natural logarithm values of the
+#'  TF are calculated and used.
+#' @param scale_factor a scale factor used to multiple the resulting
+#' TF-IDF matrix.
 #'
-#' @return a sparse matrix of normalized TFIDF matrix
+#' @returns a sparse matrix of normalized TFIDF matrix.
 #' @export
 #'
 #' @import Matrix
 #' @importFrom stats quantile
 #'
 #' @examples
-#' \dontrun{
-#' tfidf_mat <- tfidf(bmat=peakbycellmatrix, mat_binary=TRUE, TF=TRUE, log_TF=TRUE)}
-#'
-tfidf <- function(bmat, mat_binary=TRUE, TF=TRUE, log_TF=TRUE, scale_factor=100000) {
+#' SE_pbmc5k <- example_data(name="pbmc5k_SE.rda")
+#' peak_by_cell_mat <- SummarizedExperiment::assay(SE_pbmc5k)
+#' #### Downsample to speed up example ####
+#' peak_by_cell_mat <- peak_by_cell_mat[seq_len(500), seq_len(100)]
+#' tfidf_mat <- tfidf(bmat=peak_by_cell_mat)
+tfidf <- function(bmat,
+                  mat_binary=TRUE,
+                  TF=TRUE,
+                  log_TF=TRUE,
+                  scale_factor=100000) {
   if (mat_binary) {
     # "term frequency" method
     bmat@x[bmat@x>=1] <- 1

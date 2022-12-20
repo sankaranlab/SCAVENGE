@@ -1,0 +1,14 @@
+citHeader("If you use this package, please cite:")
+
+citEntry(
+  entry    = "Article",
+  title    = "Variant to function mapping at single-cell resolution through network propagation",
+  author   = "Yu, F., Cato, L.D., Weng, C. et al.",
+  journal  = "Nature Biotechnology",
+  year     = 2022,
+  volume   = NULL,
+  number   = "40",
+  pages    = "1644–1653",
+  url      = "https://doi.org/10.1038/s41587-022-01341-y",
+  textVersion = "Yu, F., Cato, L.D., Weng, C. et al. Variant to function mapping at single-cell resolution through network propagation. Nat Biotechnol 40, 1644–1653 (2022). https://doi.org/10.1038/s41587-022-01341-y"
+)

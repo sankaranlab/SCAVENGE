@@ -7,24 +7,32 @@
 tfidf(bmat, mat_binary = TRUE, TF = TRUE, log_TF = TRUE, scale_factor = 1e+05)
 }
 \arguments{
-\item{bmat}{a sparse/dense matrix or dataframe indicating count matrix (peak-by-cell matrix)}
+\item{bmat}{a sparse/dense matrix or dataframe indicating count matrix
+(peak-by-cell matrix).}
 
-\item{mat_binary}{a logic value to indicate if input bmat is spare matrix or not. bmat will be converted into a sparse matrix.}
+\item{mat_binary}{a logic value to indicate if input bmat is
+spare matrix or not. bmat will be converted into a sparse matrix.}
 
-\item{TF}{a logic value to indicate if term frequency (TF) normalization is performed}
+\item{TF}{a logic value to indicate if term frequency (TF) normalization
+is performed.}
 
-\item{log_TF}{a logic value to indicate if natural logarithm values of the TF are calculated and used}
+\item{log_TF}{a logic value to indicate if natural logarithm values of the
+TF are calculated and used.}
 
-\item{scale_factor}{a scale factor used to multiple the resulting TF-IDF matrix}
+\item{scale_factor}{a scale factor used to multiple the resulting
+TF-IDF matrix.}
 }
 \value{
-a sparse matrix of normalized TFIDF matrix
+a sparse matrix of normalized TFIDF matrix.
 }
 \description{
-Get a normalized TFIDF matrix from peak-by-cell matrix from single cell profiles
+Get a normalized TFIDF matrix from peak-by-cell matrix
+from single cell profiles.
 }
 \examples{
-\dontrun{
-tfidf_mat <- tfidf(bmat=peakbycellmatrix, mat_binary=TRUE, TF=TRUE, log_TF=TRUE)}
-
+SE_pbmc5k <- example_data(name="pbmc5k_SE.rda")
+peak_by_cell_mat <- SummarizedExperiment::assay(SE_pbmc5k)
+#### Downsample to speed up example ####
+peak_by_cell_mat <- peak_by_cell_mat[seq_len(500), seq_len(100)]
+tfidf_mat <- tfidf(bmat=peak_by_cell_mat)
 }

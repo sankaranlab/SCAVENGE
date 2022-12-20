@@ -4,7 +4,7 @@
 \alias{getmutualknn}
 \title{getmutualknn}
 \usage{
-getmutualknn(lsimat = lsimat, num_k = 30)
+getmutualknn(lsimat, num_k = 30)
 }
 \arguments{
 \item{lsimat}{A dense or sparse matrix of cell (rows) x LSI (cols)}
@@ -18,9 +18,11 @@ A sparse matrix indicating adjacent matrix from single cells used for graph cons
 Get a mutual kNN graph (M-kNN) from the latent space (LSI) of single cell profiles
 }
 \examples{
-\dontrun{
-mknn_graph <- getmutualknn(lsimat=LSI_mat, num_k=30)
-}
-
-
+SE_pbmc5k <- example_data(name="pbmc5k_SE.rda")
+peak_by_cell_mat <- SummarizedExperiment::assay(SE_pbmc5k)
+#### Downsample to speed up example ####
+peak_by_cell_mat <- peak_by_cell_mat[seq_len(500), seq_len(100)]
+tfidf_mat <- tfidf(bmat=peak_by_cell_mat)
+lsi_mat <- do_lsi(mat=tfidf_mat, dims=30)
+mknn_graph <- getmutualknn(lsimat=lsi_mat, num_k=30)
 }
