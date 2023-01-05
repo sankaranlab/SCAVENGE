@@ -61,7 +61,6 @@ can be installed directly from GitHub by typing the following into an
 `R` console:
 
     if(!require("remotes")) install.packages("remotes")
-
     remotes::install_github("https://github.com/sankaranlab/SCAVENGE")
     library(SCAVENGE)
 
