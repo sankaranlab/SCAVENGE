@@ -6,12 +6,12 @@ status](https://github.com/sankaranlab/SCAVENGE/workflows/rworkflows/badge.svg)]
 [![](https://app.codecov.io/gh/sankaranlab/SCAVENGE/branch/master/graph/badge.svg)](https://app.codecov.io/gh/sankaranlab/SCAVENGE)
 [![License: GPL (\>=
 2)](https://img.shields.io/badge/license-GPL%20(%3E=%202)-blue.svg)](https://cran.r-project.org/web/licenses/GPL%20(%3E=%202))
+
 ¶ <h4> ¶ Authors: <i>Fulong Yu, Brian Schilder</i> ¶ </h4>
 <h4> ¶ README updated: <i>Jan-05-2023</i> ¶ </h4>
 
 <!-- To modify Package/Title/Description/Authors fields, edit the DESCRIPTION file -->
 
-## `SCAVENGE`: Identifying genetic trait/phenotype relevant cell type/state at single cell resolution
 
 ### Overview:
 
@@ -55,16 +55,20 @@ We welcome you to use SCAVENGE to discover more phenotype relevant
 cells!
 
 ### Installation:
-
-Once all of the dependencies for `SCAVENGE` are installed, the package
-can be installed directly from GitHub by typing the following into an
+The package
+can be installed directly from GitHub by typing the following in an
 `R` console:
 
     if(!require("remotes")) install.packages("remotes")
     remotes::install_github("https://github.com/sankaranlab/SCAVENGE")
     library(SCAVENGE)
 
-## Documentation
+### Documentation
+ 
+### [Website](https://sankaranlab.github.io/SCAVENGE)
+### [Getting started](https://sankaranlab.github.io/SCAVENGE/articles/SCAVENGE)
+This web resource and vignette compiliation shows how to reproduce results of
+SCAVENGE analysis with monocyte count on a 10X PBMC dataset.
 
 ### Tutorial:
 
@@ -73,10 +77,12 @@ results of SCAVENGE analysis with monocyte count on a 10X PBMC dataset
 [\[**Vignette-pdf**\]](doc/SCAVENGE-vignette.pdf), [\[**Vignette-R
 markdown code**\]](doc/SCAVENGE-vignette.Rmd).
 
-See the [\[**Wiki
-page**\]](https://github.com/sankaranlab/SCAVENGE/wiki) for some
-information on preparing your GWAS data for SCAVENGE, including
-finemapping.
+See the [\[**Wiki page**\]](https://github.com/sankaranlab/SCAVENGE/wiki) for extra
+information such as preparing your GWAS data for SCAVENGE (finemapping):
+- [SCAVENGE] Preparing your GWAS data for finemapping
+- [SCAVENGE] Preparing your scATAC-seq data
+- [SCAVENGE] Rule of thumb of SCAVENGE analysis and intepretation
+- [SCAVENGE-L] SCAVENGE-L method for single cell (mt)DNA mutation-based lineage tracing analysis
 
 ### [Website](https://sankaranlab.github.io/SCAVENGE)
 
