@@ -1,13 +1,15 @@
-[![](https://img.shields.io/badge/devel%20version-1.0.2-black.svg)](https://github.com/sankaranlab/SCAVENGE)<br><br>
+SCAVENGE
+================
+[![](https://img.shields.io/badge/devel%20version-1.0.2-black.svg)](https://github.com/sankaranlab/SCAVENGE)
 [![R build
 status](https://github.com/sankaranlab/SCAVENGE/workflows/rworkflows/badge.svg)](https://github.com/sankaranlab/SCAVENGE/actions)
 [![](https://img.shields.io/github/last-commit/sankaranlab/SCAVENGE.svg)](https://github.com/sankaranlab/SCAVENGE/commits/master)
 [![](https://img.shields.io/github/languages/code-size/sankaranlab/SCAVENGE.svg)](https://github.com/sankaranlab/SCAVENGE)
-[![](https://app.codecov.io/gh/sankaranlab/SCAVENGE/branch/master/graph/badge.svg)](https://app.codecov.io/gh/sankaranlab/SCAVENGE)
+[![](https://codecov.io/gh/sankaranlab/SCAVENGE/branch/master/graph/badge.svg)](https://codecov.io/gh/sankaranlab/SCAVENGE)
 [![License: GPL (\>=
 2)](https://img.shields.io/badge/license-GPL%20(%3E=%202)-blue.svg)](https://cran.r-project.org/web/licenses/GPL%20(%3E=%202))
 ¶ <h4> ¶ Authors: <i>Fulong Yu, Brian Schilder</i> ¶ </h4>
-<h4> ¶ README updated: <i>Jan-05-2023</i> ¶ </h4>
+<h4> ¶ README updated: <i>Jan-19-2023</i> ¶ </h4>
 
 <!-- To modify Package/Title/Description/Authors fields, edit the DESCRIPTION file -->
 

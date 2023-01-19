@@ -1,5 +1,5 @@
 ---
-title: ""  
+title: "SCAVENGE"  
 author: "`r rworkflows::use_badges()`" 
 date: "<h4>README updated: <i>`r format( Sys.Date(), '%b-%d-%Y')`</i></h4>"
 output:
