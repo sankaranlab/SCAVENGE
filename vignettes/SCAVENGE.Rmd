@@ -34,6 +34,8 @@ set.seed(9527)
 
 ### Load example data
 The PBMC data was processed using [ArchR](https://www.archrproject.com/) package. The peak-by-cell count matrix and corresponding meta data were extracted and stored in a [RangedSummarizedExperiment](https://bioconductor.org/packages/3.7/bioc/vignettes/SummarizedExperiment/inst/doc/SummarizedExperiment.html) object (for more details please follow our paper).
+The typical input of fine-mapped data for SCAVENGE or g-chromVAR can be found here (https://github.com/sankaranlab/SCAVENGE-reproducibility/tree/main/data/finemappedtraits_hg19). You can use this (trait_import <- importBedScore(rowRanges(SE_pbmc5k), trait_file, colidx=5)) to import your fine-mapped data into SummarizedExperiment when you have your data ready (trait_file is the path of your file).
+
 
 ```{r message=TRUE, warning=FALSE, cache=FALSE}
 trait_import <- example_data(name="mono.PP001.bed")
