@@ -14,7 +14,7 @@
 * New exported functions:
   - `example_data`
 * Add `example_results` as *data.R*
-* Add runnable example for all exported functions.
+* Add runnable examples for all exported functions.
 * Add *docker* vignette.
 
 ## Bug fixes
